@@ -1,0 +1,174 @@
+﻿@model HRMS.Models.employeereg
+
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<script src="~/Scripts/jquery-1.7.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<style>
+    .small-top {
+        margin-top: 10px;
+    }
+
+    .myvalidation {
+        color: red;
+    }
+</style>
+
+
+
+
+
+@using (Html.BeginForm())
+{@Html.ValidationSummary(false, "", new { @class = "myvalidation" })
+
+<div class="container">
+    <div class="col-md-8 col-md-offset-2">
+
+        @*<div class=" row small-top">
+           <div class="col-md-3">
+             @Html.LabelFor(model => model.ID)
+           </div>
+         <div class="col-md-9">
+            @Html.TextBox("Id", ViewData["maxId"], new { @class = "form-control", @readonly = "readonly" })
+         </div>
+        </div>*@
+
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.First_name)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.First_name, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Last_name)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.Last_name, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.nationality)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.nationality, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.gender)
+            </div>
+            <div class="col-md-9">
+                @Html.DropDownList("Gender", new List<SelectListItem>{
+
+              new SelectListItem{Text="Male",    Value="Male"},
+              new SelectListItem{Text="Female",Value = "Female" }}, "--Select Gender--" ,new { @class = "form-control" })
+
+            </div>
+        </div>
+
+
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.bob)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.bob, new { @class = "datefield", @type = "date" })
+            </div>
+        </div>
+
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Email)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+            </div>
+        </div>
+
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Contact_no)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.Contact_no, new { @class = "form-control" })
+            </div>
+        </div>
+
+
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Address)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.Address, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Department)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.Department, new { @class = "form-control" })
+
+
+
+            </div>
+        </div>
+
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Qualification)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.Qualification, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Username)
+            </div>
+            <div class="col-md-9">
+                @Html.TextBoxFor(model => model.Username, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.Password)
+            </div>
+            <div class="col-md-9">
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control" })
+            </div>
+        </div>
+
+
+        @*<div class=" row small-top">
+            <div class="col-md-3">
+                @Html.LabelFor(model => model.DesignationId, "Designation")
+            </div>
+            <div class="col-md-9">
+                @Html.DropDownList("DesignationId", "--Select Designation--")
+            </div>
+        </div>*@
+        <div class=" row small-top">
+            <div class="col-md-12 text-center">
+                <input type="submit" value="Add" class="btn btn-info" style="width:200px; height:40px;" />
+            </div>
+        </div>
+
+
+    </div>
+</div>
+}
